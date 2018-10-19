@@ -1,25 +1,27 @@
-# Project Name:  Lesson 3 Version Control
+## Project Name:  Expense Calculator Application
 
-
-## Course Title:
+### Course Title:
 Web Application Development
 
-## Assignment Date:  
-(28 September, 2018)
+### Assignment Date:  
+(October 19, 2018)
 
-## Student Name:  
+### Student Name:  
 (Benjamen Johnson)
 
-## Project Description:
-(This assigment was about learning how to use GitHub and also enforcing the our knowledge of VCS by having us write about 5 differnt topics realting to VCS)
+### Project Description:
+(Complete the expense calculator file, by providing the missing code.)
 
-##View Project:
-https://boj1717.github.io/lesson3_VersionControl/
+### View Project:
+(Replace this statement with your GitHub Page URL that was created when you 
+ published the project.)
+
+### Lessons Learned in the Assignment:
+1. (Briefly describe a lesson/concept learned in this lesson.)
+2. (Briefly describe a lesson/concept learned in this lesson.)
+3. (Briefly describe a lesson/concept learned in this lesson.)
 
 
 
-## Lessons Learned in the Assignment:
-1. (VCS systems allow for a personn to retrieve multiple versions of a file.)
-2. (Distrubted VCS systems are the best ones out there as it allows for multiple people to coopy the files, resulting in less problems.)
-3. (In order for a person to trasnfer thier files to github they have to create a branch between cloud 9 and github by performing commands in the terminal.)
-
+# lesson4_javascript1_1
+# lesson4_javascript1

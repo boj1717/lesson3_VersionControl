@@ -1,155 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+       <!--
+          Course:  Web Application Development
+          Assignment:  Lesson 4 (JavaScript 1)
+          Author: Benjamen Johnson 
+          Date: 19 Oct 2018   
+          Filename: index.html
+       -->
+       <meta charset="utf-8" />
+       <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-    
-    
-<head>
+       <title>Lesson 4 Assignment</title>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+       <link rel="stylesheet" href="styles.css" />
 
-    <title>BENJAMEN JOHNSON</title>
+    </head>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <body>
+       <header>
+          <h1> Lesson 4 Assignment </h1>
+       </header>
 
-    <!-- Custom CSS -->
-    <link href="css/one-page-wonder.css" rel="stylesheet">
+        <article>
+            <br /><h2>Monthly Expense Calculator</h2><br />
+
+              <form id = "expenseCalculator">          
+                <fieldset id="inputinfo">
+                      <legend><span>Instructions:</span></legend>
+                      <p>The expense calculator will determine your total living expenses and 
+                      show the percentage of the total expenses spent for each category (food, shelter, etc.).</p>
+
+                      <br>
+
+                      <p>Please enter the amounts (in dollars) for each expense category for one month.  
+                      For example, for the Category - <b>Shelter</b> the user may enter the expense amount <b>500.00</b>.</p>
+
+                      <br><br><br>
+
+                      <p><h3>Expense Category Name:</h3>
+
+                          <label for="shelterInput">
+                            Shelter (mortgage, rent, taxes, etc.):         
+                            <input type="text"  id="shelterInput" name="shelter"  />
+                          </label>
+                      </p>
+                      <p><label for="foodInput">
+                            Food (grocery, dining out, etc.):
+                            <input type="text" id="foodInput" name="food" />
+                          </label>
+                      </p>
+
+                      <!--************************************************************************************************
+                      * Task #1:  Add additional expense categories using the above code as an example.  The 
+                      *           following categories should be included:  Household, Transportation, and 
+                      *           Miscellaneous.  Add your code below this comment block BEFORE the </fieldset> tag!!!
+                      * REMINDERS:  
+                      *      1.)  Each id value must be unique and enclosed in quotes.  This value will be referenced
+                      *           later in the program and it must match EXACTLY including the case.
+                      *      2.)  Each name value must be unique and enclosed in quotes.  This value will be referenced
+                      *           later in the program and it must match EXACTLY including the case.
+                      *	
+                      * HINT:  Use the following variable names:  householdInput, miscellaneousInput, transportationInput
+                      *
+                      *************************************************************************************************-->
+                        
+                        <p><label for="householdInput">
+                            Household Goods (Furniture, Cleaning Supplies, etc.):
+                            <input type="text" id="householdInput" name="household" />
+                          </label>
+                      </p>
+                      <p><label for="miscellaneousInput">
+                            Miscellaneous (grooming, entertainment, etc.):
+                            <input type="text" id="miscellaneousInput" name="miscellaneous" />
+                          </label>
+                      </p>
+                      <p><label for="transportationInput">
+                            Transportation (gas, maintance, car payments, etc.):
+                            <input type="text" id="transportationInput" name="transportation" />
+                          </label>
+                      </p>
+                </fieldset>                 
 
 
-</head>
+                <!--************************************************************************************************
+                *  This section in the HTML code defines id's or placeholders where the result of the percentages
+                *  calculated will be place.  The getElementById() method used later in the program uses these id's 
+                *  to place the results of the calculations on the HTML page.
+                **************************************************************************************************-->          
+                <fieldset id="summary">
+                  <legend><span>Percentage:</span></legend>
+                  <fieldset id="calculationinfo">
+                    <legend>Calculations</legend>
 
-<body>
+                     <label>                  
+                         <p id="totalExpenses">  </p>
+                         <p id="shelterPercentage">  </p>
+                         <p id="foodPercentage">  </p>
+                         <p id="householdPercentage">  </p>
+                         <p id="transportationPercentage">  </p>
+                         <p id="miscellaneousPercentage">  </p>
+                     </label>              
+                  </fieldset>
+                </fieldset>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Web Application Development</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#topic1">Local Version Control Systems</a>
-                    </li>
-                    <li>
-                        <a href="#topic2">Centralized Version Control Systems</a>
-                    </li>
-                    <li>
-                        <a href="#topic3">Distributed Version Control Systems</a>
-                    </li>
-                    <li>
-                        <a href="#topic4">Versioning Control System</a>
-                    </li>
-                    <li>
-                        <a href="#topic5">Git</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
 
-    <!-- Full Width Image Header -->
-    <header class="header-image">
-        <div class="headline">
-            <div class="container">
-                <h2>Lesson 3 Highlights</h2>
-                <h3>Benjamen Johnson</h3>
-            </div>
-        </div>
-    </header>
-
-    <!-- Page Content -->
-    <div class="container">
-
-        <hr class="featurette-divider">
-
-        <!-- First Featurette -->
-        <div class="featurette" id="topic1">
-            <img class="featurette-image img-circle img-responsive pull-right" src="lesson3/download.png">
-            <h2 class="featurette-heading">Versioning Control System
-                <span class="text-muted">No more problems of multiple users saving different files and hurting productivity, thanks to VCS</span>
-            </h2>
-            <p class="lead"> Versioning control systems that keeps a record of changes made to a file or set of files so that one can recall specific versions of those files. While it seems like that isn’t a significant thing, because you probably have gotten so used to it in your daily life, the ability for multiple versions of a file to be recalled is a huge step forward for the Technology community. It allows for multiple users to edit versions of a file and then upload that so others can see the changes while they are working on a file themselves. This allows multiple people to work on a file from separate locations at the same time which is very important to my field. Its also important to our class because it allows me to work on the same file from multiple computers. </p>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <!-- Second Featurette -->
-        <div class="featurette" id="topic2">
-            <img class="featurette-image img-circle img-responsive pull-left" src="lesson3/local.png">
-            <h2 class="featurette-heading">Local Version Control System
-                <span class="text-muted">The most common aproach to VCS</span>
-            </h2>
-            <p class="lead">Local Version control method is when a person copies their files directly into another directory. This is the most common Version Control Method that people use, mainly because it is the simplest to preform and use. However local VCS does have its down falls at the user is responsible for remembering what directory they have copied the files into. Programs such as RCS were created to help better this style of VCS, as it worked to keep patches in a special format on disks, and then recreating those files by adding up the patches. This is interesting because it is the most common form of VCS, therefore its most likely the ones I will interact with most. .</p>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <!-- Third Featurette -->
-        <div class="featurette" id="topic3">
-            <img class="featurette-image img-circle img-responsive pull-right" src="lesson3/centralized.png">
-            <h2 class="featurette-heading">Centralized Version Control System 
-                <span class="text-muted">The VCS that led the way in callobarating</span>
-            </h2>
-            <p class="lead">Centralized Version Control Systems where the next development in the Version Control Systems trilogy, with a purpose and focus on allowing people to collaborate with one another, even on different systems. It performs this by using a single server to contain all the files, from which users “check” out files from.  CVS also allows other people to see what other people are doing on the file at the same time, an important innovation for developers as it allows people to calibrate easier. The biggest issue with this system is that if the central system with the files on it crashes, than no one can access those files, no matter where they are. </p>
-        </div>
-        
-        <hr class="featurette-divider">
-        
-       <!-- Fourth Featurette -->
-        <div class="featurette" id="topic4">
-            <img class="featurette-image img-circle img-responsive pull-left" src="lesson3/distributed.png">
-            <h2 class="featurette-heading">Distrubuted Version Control System
-                <span class="text-muted">The VCS fixing the issues from CVCS</span>
-            </h2>
-            <p class="lead">Unlike in Centralized Version control Systems where users “check” out files, in Distributed Version Control Systems users create copies of the files, mirroring the repository. This means that even if the server with the original files crashes, the copies on the other systems are still available for people to work on. This features also allows even more users to calibrate at the same time on projects as there are several types of work flows available. This is extremely important as it can stream line the work system. I find it interesting because of the fact that it is a system that isn’t completely reliant on the original file. </p>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <!-- Fifth Featurette -->
-        <div class="featurette" id="topic5">
-            <img class="featurette-image img-circle img-responsive pull-right" src="lesson3/git.png">
-            <h2 class="featurette-heading">GIT
-                <span class="text-muted">The revolutionary Distrubuted VCS</span>
-            </h2>
-            <p class="lead">Git is a type of distributed version control system that is very common among those in technology-based fields, both at the professional level as well as the university level. Despite being free to use, the program is extremely efficient whether being used to complete big or small projects, having high user speeds. Another popular feature of GitHub is that it uses a small footprint. It doesn’t require large downloads or much effort from the user. This is important to this class because it gives us students an effective tool for backing up our work without costing us money. </p>
-        </div>
-
-        <hr class="featurette-divider">
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; 2018</p>
-                </div>
-            </div>
-        </footer>
-
-    </div>
-    <!-- /.container -->
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-</body>
-
+                <!--************************************************************************************************
+                *  This section in the HTML code creates TWO buttons:  1)  Convert Expense $ to % button and
+                *  2)  Clear Form button.  
+                *
+                *  Explanation:  The onclick method is used to associate an event with each button.  When the
+                *  user clicks either button, the methods stated will be executed to handle that event.  For instance,
+                *  when the user clicks the 'Convert Expense $ to %' button the calculatePercentages() code will 
+                *  execute and when the user clicks the 'Clear Form' button, the clearForm() method will execute.
+                *
+                *  The onClick event will execute when a button is clicked.
+                **************************************************************************************************-->
+                <fieldset id="calculatebutton">
+                  <button type="button" onclick="calculatePercentages()"> Convert Expense $ to % </button>
+                  <button type="reset" onclick="clearForm()"> Clear Form </button>
+                </fieldset> 
+            </form>    
+        </article>    
+    <script src="expenseCalculator.js"> </script>
+    </body>
 </html>
+
+
